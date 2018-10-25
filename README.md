@@ -2,26 +2,26 @@
 
 This is the Rails api for the Sustainable Citizen Project. 
 
-####Setup:
+#### Setup:
 * Ruby version: `ruby 2.3.3p222 (2016-11-21 revision 56859) [universal.x86_64-darwin17]
 `
 * Rails version: `Rails 5.2.1`
 * Rbenv version: `Rbenv 2.3.1`
 * Rvm version: `Rvm 2.3.1`
 
-####Run tests with: 
+#### Run tests with: 
 ```
 bundle exec rspec 
 ```
 
-####Run on localhost with: 
+#### Run on localhost with: 
 ```
 rails s 
 ```
 
 ---
 
-###How to Create a New Object: 
+### How to Create a New Object: 
 
 ##### 1. Create a new model 
 Example: 
