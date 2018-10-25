@@ -1,2 +1,4 @@
-class ApplicationController < ActionController::API   # change to api only mode.
+class ApplicationController < ActionController::API
+  include Response
+  include ExceptionHandler
 end
