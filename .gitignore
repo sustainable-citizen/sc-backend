@@ -33,3 +33,4 @@ db/*.sqlite3
 /config/master.key
 
 .idea/
+Gemfile
