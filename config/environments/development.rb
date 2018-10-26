@@ -64,4 +64,7 @@ Rails.application.configure do
   config.debug_exception_response_format = :api
 
 
+  ENV['CLIENT_EMAIL'] = 'oauth_client'
+  ENV['CLIENT_PASSWORD'] = 'password'
+
 end
