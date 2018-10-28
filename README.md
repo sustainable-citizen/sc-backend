@@ -67,6 +67,8 @@ Then run this:
 ```
 rails routes 
 ``` 
+---
+
 ### Oauth2.0:
 #### 1. Request a new token
 API for request a new token: `POST /oauth/token` with the header `Content-Type: application/json` and the body
