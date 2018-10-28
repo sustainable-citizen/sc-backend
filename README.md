@@ -70,7 +70,13 @@ rails routes
 ---
 
 ### Oauth2.0:
-#### 1. Request a new token
+#### 1. Create a test user
+Use the following rails console command to create a test user by using devise
+```
+User.create!(email: 'x@xxx.com', password: '000000')
+```
+
+#### 2. Request a new token
 API for request a new token: `POST /oauth/token` with the header `Content-Type: application/json` and the body
 ```javascript
 {
