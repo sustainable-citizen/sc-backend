@@ -1,4 +1,5 @@
 class SamplesController < ApplicationController
+  before_action :doorkeeper_authorize!  #, except: [:index, :show]
   before_action :set_sample, only: [:show, :update, :destroy]
 
   # GET /samples
