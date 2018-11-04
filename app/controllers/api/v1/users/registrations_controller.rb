@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
 class Api::V1::Users::RegistrationsController < Devise::RegistrationsController
-  skip_before_action :doorkeeper_authorize!
+  skip_before_action :doorkeeper_authorize!, raise: false
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
-
-
+  respond_to :json
   # POST /resource
   def create
     build_resource(sign_up_params)
