@@ -1,0 +1,24 @@
+
+# Docker Compose syntax version. Requires Docker Engine 1.13.0+
+#
+# NOTE: This is used for local setup ONLY.
+version: '3.1'
+
+# Create docker volumes using the default driver
+volumes:
+  sc-backend-logs:
+
+# Docker services
+services:
+  db:
+    image: postgres
+    volumes:
+    - ./tmp/db:/var/lib/postgresql/data
+
+  sc-backend:
+    container_name: sc-backend
+    image: sc-backend
+    ports:
+    - "4000"
+    depends_on:
+    - db
