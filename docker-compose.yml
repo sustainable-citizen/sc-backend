@@ -10,15 +10,20 @@ volumes:
 
 # Docker services
 services:
-  db:
-    image: postgres
-    volumes:
-    - ./tmp/db:/var/lib/postgresql/data
+  mysql:
+    container_name: mysql
+    image: mysql:5.7
+    ports:
+    - "3309:3306"
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
 
   sc-backend:
     container_name: sc-backend
     image: sc-backend
     ports:
     - "4000"
+    links:
+    - mysql:mysql.localhost
     depends_on:
-    - db
+    - mysql

@@ -85,10 +85,8 @@ API for request a new token: `POST /oauth/token` with the header `Content-Type: 
    "password"   : "000000"
 }
 ```
+
 ---
-Using this tutorial as a reference: https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one 
-
-
 ### Docker: 
 #### Building your docker image: 
 ```
@@ -98,3 +96,10 @@ docker build -t sc-backend .
 ```ruby
 docker compose up 
 ```
+#### Seeing all containers currently running: 
+```ruby
+docker ps 
+```
+
+---
+Using this tutorial as a reference: https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one 
