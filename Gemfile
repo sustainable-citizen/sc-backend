@@ -6,6 +6,7 @@ ruby '2.3.3'
 gem 'doorkeeper'
 gem 'devise'
 gem 'pg'
+gem 'rack-cors'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
