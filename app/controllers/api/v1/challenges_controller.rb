@@ -2,19 +2,19 @@ class Api::V1::ChallengesController < ApplicationController
   before_action :doorkeeper_authorize!  #, except: [:index, :show]
   before_action :set_challenge, only: [:show, :update, :destroy]
 
-  # GET /samples
+  # GET /challenges
   def index
-    @challenge = Challenge.all
-    json_response(@challenge)
+    @challenges = Challenge.all
+    json_response(@challenges)
   end
 
-  # POST /samples
+  # POST /challenges
   def create
     @challenge = Challenge.create!(challenge_params)
     json_response(@challenge, :created)
   end
 
-  # GET /samples/:id
+  # GET /challenges/:id
   def show
     json_response(@challenge)
   end
@@ -35,7 +35,7 @@ class Api::V1::ChallengesController < ApplicationController
 
   def challenge_params
     # whitelist params
-    params.permit(:title)
+    params.permit(:name, :description, :start_date, :end_date)
   end
 
   def set_challenge

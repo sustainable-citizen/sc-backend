@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'user_challenges_status/update'
     end
   end
+
   namespace :api do
     namespace :v1 do
       get 'user_challenge/show'
@@ -15,14 +16,14 @@ Rails.application.routes.draw do
       get 'user_challenge/update'
     end
   end
+
   namespace :api do
     namespace :v1 do
-      get 'challenges/get'
-      get 'challenges/set'
-      get 'challenges/update'
-      get 'challenges/delete'
+      resources :challenges do
+      end
     end
   end
+
   namespace :api, defaults: {format: :json}, path: 'api' do
     namespace :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       devise_for :users, controllers: {
@@ -38,6 +39,5 @@ Rails.application.routes.draw do
   end
   resources :samples do
   end
-
 
 end
