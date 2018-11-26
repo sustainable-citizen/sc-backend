@@ -22,7 +22,7 @@ services:
     container_name: sc-backend
     image: sc-backend
     ports:
-    - "4000"
+    - "3000"
     links:
     - mysql:mysql.localhost
     depends_on:
