@@ -1,0 +1,2 @@
+class UserChallengesStatus < ApplicationRecord
+end

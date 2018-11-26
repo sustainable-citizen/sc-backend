@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_25_215756) do
+ActiveRecord::Schema.define(version: 2018_11_26_013823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer "author_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "oauth_access_grants", force: :cascade do |t|
     t.bigint "resource_owner_id", null: false
@@ -63,6 +73,22 @@ ActiveRecord::Schema.define(version: 2018_10_25_215756) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_challenges", force: :cascade do |t|
+    t.integer "user_challenge_id"
+    t.integer "user_id"
+    t.integer "challenge_id"
+    t.datetime "accept_date"
+    t.integer "status_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_challenges_statuses", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -77,6 +103,10 @@ ActiveRecord::Schema.define(version: 2018_10_25_215756) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "challenges", "users", column: "author_id"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
+  add_foreign_key "user_challenges", "challenges"
+  add_foreign_key "user_challenges", "user_challenges_statuses", column: "status_id"
+  add_foreign_key "user_challenges", "users"
 end
