@@ -94,7 +94,7 @@ docker build -t sc-backend .
 ```
 #### Starting up docker container: 
 ```ruby
-docker compose up 
+docker-compose up 
 ```
 #### Seeing all containers currently running: 
 ```ruby
