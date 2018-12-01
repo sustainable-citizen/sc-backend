@@ -1,25 +1,12 @@
 require 'api_constraints'
 Rails.application.routes.draw do
-
   namespace :api do
     namespace :v1 do
-      get 'user_challenges_status/show'
-      get 'user_challenges_status/create'
-      get 'user_challenges_status/update'
-    end
-  end
-
-  namespace :api do
-    namespace :v1 do
-      get 'user_challenge/show'
-      get 'user_challenge/create'
-      get 'user_challenge/update'
-    end
-  end
-
-  namespace :api do
-    namespace :v1 do
+      resources :user_challenge do
+      end
       resources :challenges do
+      end
+      resources :user_challenges_status do
       end
     end
   end
@@ -28,7 +15,8 @@ Rails.application.routes.draw do
     namespace :v1, constraints: ApiConstraints.new(version: 1, default: true) do
       devise_for :users, controllers: {
           registrations: 'api/v1/users/registrations',
-      }, skip: [:sessions, :password]
+      }, skip: [:sessions, :password] do
+      end
     end
   end
 
@@ -37,7 +25,8 @@ Rails.application.routes.draw do
     # No need to register client application
     skip_controllers :applications, :authorized_applications
   end
-  resources :samples do
-  end
+
+  # resources :samples do
+  # end
 
 end
