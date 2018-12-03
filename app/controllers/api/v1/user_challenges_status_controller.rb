@@ -1,5 +1,4 @@
 class Api::V1::UserChallengesStatusController < ApplicationController
-  before_action :doorkeeper_authorize!  #, except: [:index, :show]
   before_action :set_user_challenges_status, only: [:destroy]
 
   # GET /user_challenges_status
