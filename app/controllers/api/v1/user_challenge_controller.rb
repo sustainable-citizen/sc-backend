@@ -34,11 +34,11 @@ class Api::V1::UserChallengeController < ApplicationController
     head :no_content
   end
 
-  # DELETE /user_challenges/:id
-  def destroy
-    @user_challenge.destroy
-    head :no_content
-  end
+  # # DELETE /user_challenges/:id
+  # def destroy
+  #   @user_challenge.destroy
+  #   head :no_content
+  # end
 
   private
 

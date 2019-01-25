@@ -1,7 +1,6 @@
 class CreateUserChallenges < ActiveRecord::Migration[5.2]
   def change
     create_table :user_challenges do |t|
-      t.integer :user_challenge_id
       t.integer :user_id
       t.integer :challenge_id
       t.timestamp :accept_date
