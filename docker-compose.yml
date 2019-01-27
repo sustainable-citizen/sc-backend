@@ -10,20 +10,20 @@ volumes:
 
 # Docker services
 services:
-  mysql:
-    container_name: mysql
-    image: mysql:5.7
-    ports:
-    - "3309:3306"
-    environment:
-    - MYSQL_ROOT_PASSWORD=root
+  # mysql:
+  #   container_name: mysql
+  #   image: mysql:5.7
+  #   ports:
+  #   - "3309:3306"
+  #   environment:
+  #   - MYSQL_ROOT_PASSWORD=root
 
   sc-backend:
     container_name: sc-backend
     image: sc-backend
     ports:
     - "3000:3000"
-    links:
-    - mysql:mysql.localhost
-    depends_on:
-    - mysql
+    # links:
+    # - mysql:mysql.localhost
+    # depends_on:
+    # - mysql
