@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(version: 2018_11_26_013823) do
   end
 
   create_table "user_challenges", force: :cascade do |t|
-    t.integer "user_challenge_id"
     t.integer "user_id"
     t.integer "challenge_id"
     t.datetime "accept_date"
