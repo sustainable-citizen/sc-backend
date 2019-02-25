@@ -13,7 +13,6 @@ class Api::V1::UserChallengeController < ApplicationController
     if params[:challenge_id]
       @user_challenges = UserChallenge.where(challenge_id: params[:challenge_id])
     end
-
     json_response(@user_challenges)
   end
 
