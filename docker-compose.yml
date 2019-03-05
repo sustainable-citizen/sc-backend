@@ -24,7 +24,6 @@ services:
       dockerfile: Dockerfile
     container_name: sc-backend
     restart: always
-    entrypoint: removepid.sh
     image: sc-backend
     ports:
     - "3000:3000"
