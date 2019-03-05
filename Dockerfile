@@ -20,7 +20,7 @@ COPY . /${SC_BACKEND_HOME}
 
 
 
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["removepid.sh"]
 CMD ["rails", "server", "puma"]
 
 CMD rails s
