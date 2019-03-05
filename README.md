@@ -90,14 +90,23 @@ API for request a new token: `POST /oauth/token` with the header `Content-Type: 
 ### Docker: 
 #### Building your docker image: 
 ```
-docker build -t sc-backend .
+docker-compose build
 ```
 #### Starting up docker container: 
-```ruby
+```
 docker-compose up 
 ```
+#### Starting up docker container in background: 
+```
+docker-compose up -d
+```
+#### stop background container: 
+```
+docker-compose stop
+```
+
 #### Seeing all containers currently running: 
-```ruby
+```
 docker ps 
 ```
 

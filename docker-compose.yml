@@ -19,7 +19,11 @@ services:
   #   - MYSQL_ROOT_PASSWORD=root
 
   sc-backend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
     container_name: sc-backend
+    restart: always
     image: sc-backend
     ports:
     - "3000:3000"
