@@ -19,8 +19,4 @@ RUN bundle install
 COPY . /${SC_BACKEND_HOME}
 
 
-
-ENTRYPOINT ["removepid.sh"]
-CMD ["rails", "server", "puma"]
-
 CMD rails s
