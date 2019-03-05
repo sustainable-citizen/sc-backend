@@ -18,4 +18,9 @@ COPY Gemfile Gemfile.lock /${SC_BACKEND_HOME}/
 RUN bundle install
 COPY . /${SC_BACKEND_HOME}
 
+
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["rails", "server", "puma"]
+
 CMD rails s
