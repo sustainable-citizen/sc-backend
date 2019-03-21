@@ -4,7 +4,7 @@ git_source(:github) {|repo| "https://github.com/#{repo}.git"}
 ruby '2.3.3'
 
 gem 'doorkeeper'
-gem 'devise'
+gem 'devise', '>=4.6.1'
 gem 'pg'
 gem 'rack-cors'
 gem 'rack', '>=2.0.6'
