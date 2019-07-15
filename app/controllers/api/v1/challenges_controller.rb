@@ -1,5 +1,4 @@
 class Api::V1::ChallengesController < ApplicationController
-  before_action :doorkeeper_authorize!  #, except: [:index, :show]
   before_action :set_challenge, only: [:show, :update, :destroy]
 
   # GET /challenges

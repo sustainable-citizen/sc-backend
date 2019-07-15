@@ -26,7 +26,4 @@ Rails.application.routes.draw do
     skip_controllers :applications, :authorized_applications
   end
 
-  # resources :samples do
-  # end
-
 end
